@@ -1,0 +1,19 @@
+﻿@model Practical1MVC.Models.AddModel
+
+<h2>Add Two Numbers</h2>
+
+<form asp-action="Index" method="post">
+
+    <input asp-for="A" placeholder="First Number" />
+    <br /><br />
+
+    <input asp-for="B" placeholder="Second Number" />
+    <br /><br />
+
+    <input type="submit" value="Add" />
+
+</form>
+
+<br />
+
+<h3>Result = @Model.Result</h3>
