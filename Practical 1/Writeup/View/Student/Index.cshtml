@@ -1,0 +1,61 @@
+﻿@model Practical_1_Writeup.Models.StudentResultModel
+
+@{
+    ViewData["Title"] = "Student Result Calculator";
+}
+
+<h2>Student Result Calculator</h2>
+
+<form asp-action="Index" method="post">
+
+    <p>
+        Roll Number :
+        <input asp-for="RollNo" />
+    </p>
+
+    <p>
+        Student Name :
+        <input asp-for="Name" />
+    </p>
+
+    <p>
+        Subject 1 :
+        <input asp-for="Sub1" />
+    </p>
+
+    <p>
+        Subject 2 :
+        <input asp-for="Sub2" />
+    </p>
+
+    <p>
+        Subject 3 :
+        <input asp-for="Sub3" />
+    </p>
+
+    <p>
+        Subject 4 :
+        <input asp-for="Sub4" />
+    </p>
+
+    <p>
+        Subject 5 :
+        <input asp-for="Sub5" />
+    </p>
+
+    <button type="submit">Calculate</button>
+
+</form>
+
+@if (Model != null)
+{
+    <hr />
+
+    <h3>Result</h3>
+
+    <p><strong>Roll Number :</strong> @Model.RollNo</p>
+    <p><strong>Name :</strong> @Model.Name</p>
+    <p><strong>Total Marks :</strong> @Model.Total</p>
+    <p><strong>Percentage :</strong> @Model.Percentage %</p>
+    <p><strong>Grade :</strong> @Model.Grade</p>
+}
