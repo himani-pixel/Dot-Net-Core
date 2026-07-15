@@ -1,0 +1,49 @@
+@model Practical_1_Writeup.Models.StudentResultModel
+
+@{
+    ViewData["Title"] = "Student Result Calculator";
+}
+
+<h2>Student Result Calculator</h2>
+
+<form asp-controller="Student" asp-action="Index" method="post">
+
+    <p>
+        Subject 1:
+        <input asp-for="Sub1" type="number" />
+    </p>
+
+    <p>
+        Subject 2:
+        <input asp-for="Sub2" type="number" />
+    </p>
+
+    <p>
+        Subject 3:
+        <input asp-for="Sub3" type="number" />
+    </p>
+
+    <p>
+        Subject 4:
+        <input asp-for="Sub4" type="number" />
+    </p>
+
+    <p>
+        Subject 5:
+        <input asp-for="Sub5" type="number" />
+    </p>
+
+    <button type="submit">Calculate</button>
+
+</form>
+
+@if (Model.Total > 0)
+{
+    <hr />
+
+    <h3>Result</h3>
+
+    <p><strong>Total:</strong> @Model.Total</p>
+    <p><strong>Percentage:</strong> @Model.Percentage.ToString("F2")%</p>
+    <p><strong>Grade:</strong> @Model.Grade</p>
+}
