@@ -1,23 +1,21 @@
-﻿using System;
-
-class Practical_1C
+using System;
+class Program
 {
-   public static void Main(string[] args)
-   {
-       int count = 1;
+    static void Main()
+    {
+        string[] city = new string[10];
 
-       for (int i = 1; i <= 5; i++)
-       {
-           for (int j = 1; j <= i; j++)
-           {
-               Console.Write(count + " ");
-               count++;
-           }
-
-           Console.WriteLine();
-       }
-
-       Console.WriteLine("Himani Malankar T016");
-       Console.ReadLine();
-   }
+        for (int i = 0; i < 10; i++)
+        {
+            Console.Write("Enter city " + (i + 1) + ": ");
+            city[i] = Console.ReadLine();
+        }
+        Array.Sort(city);
+        Console.WriteLine("\n----- Sorted Cities -----");
+        for (int i = 0; i < city.Length; i++)
+        {
+            Console.WriteLine(city[i]);
+        }
+        Console.WriteLine("Himani T016");
+    }
 }
